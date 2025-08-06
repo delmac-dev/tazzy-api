@@ -1,6 +1,4 @@
 node_modules
-api
-dist
+.env
 .vercel
-
-.vercel
+postman.http
