@@ -8,14 +8,14 @@
     "start": "next start"
   },
   "dependencies": {
+    "@adobe/pdfservices-node-sdk": "^4.1.0",
     "@google/genai": "^1.12.0",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.53.0",
     "axios": "^1.11.0",
-    "jose": "^6.0.12",
     "next": "15.4.5",
-    "pdf-parse": "^1.1.1",
     "pdf-to-png-converter": "^3.7.1",
+    "pdf2json": "^3.2.0",
     "tesseract.js": "^6.0.1"
   },
   "devDependencies": {
