@@ -1,40 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/create-next-app).
+<h1 align="center">Welcome to express-vercel-starter 👋</h1>
+<p>
+  <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <a href="#" target="_blank">
+    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+  </a>
+</p>
 
-## Getting Started
+> Express.js v5 starter is a boilerplate for building and deploying Express.js applications to Vercel.
 
-First, run the development server:
+## 🏠 [Homepage](https://express-starter.productsway.com/api)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### ✨ [Demo](https://express-starter.productsway.com/api/todo)
+
+## Built with
+
+- [cors](https://www.npmjs.com/package/cors) CORS is a node.js package for providing a Connect/Express middleware that can be used to enable CORS with various options.
+- [express](https://www.npmjs.com/package/express) ^5.0.0-beta.1 Fast, unopinionated, minimalist web framework for Node.js.
+- [helmet](https://www.npmjs.com/package/helmet) Helmet helps you secure your Express apps by setting various HTTP headers.
+- [jsend](https://www.npmjs.com/package/jsend) - Utilities and middleware to assist with sending and handling jsend responses.
+- [pino](https://www.npmjs.com/package/pino) Very low overhead Node.js logger.
+- [biome](https://biomejs.dev/internals/language-support/) Biome is a formatter, linter, bundler, and more for JavaScript, TypeScript, JSON, HTML, Markdown, and CSS.
+- [tsup](https://www.npmjs.com/package/tsup) Bundle your TypeScript library with no config, powered by esbuild.
+- [tsx](https://www.npmjs.com/package/tsx) TypeScript Execute (tsx): Node.js enhanced with esbuild to run TypeScript & ESM files
+
+## Install
+
+```sh
+bun install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage
 
-You can start editing the page by modifying `app/route.ts`. The page auto-updates as you edit the file.
+#### Initialize
 
-## Learn More
+```sh
+git clone https://github.com/jellydn/express-vercel-starter
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Develop
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Create .env file from .env.example then run below command
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```sh
+bun run dev
+```
 
-## Deploy on Vercel
+#### Pre-commit
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project uses [pre-commit](https://pre-commit.com) to run pre-commit hooks. The pre-commit hooks will run the linter and formatter before committing.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```sh
+pre-commit install
+```
 
-## API Routes
+### Build
 
-This directory contains example API routes for the headless API app.
+```sh
+bun run build
+```
 
-For more details, see [route.js file convention](https://nextjs.org/docs/app/api-reference/file-conventions/route).
+## Deployment
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fjellydn%2Fvercel-express-starter)
+
+### Prerequisites
+
+- Install [Vercel CLI](https://vercel.com/download)
+
+### Steps
+
+1.  Click on the "Deploy with Vercel" button on your project's repository page.
+2.  If prompted, log in to your Vercel account or create a new account.
+3.  Select the repository that you want to deploy.
+4.  Change the output directory to `.` (dot) on your project's build settings. This will ensure that the built files are placed in the root directory of your project.
+5.  Click on "Deploy." Vercel will automatically build and deploy your project.
+
+    ![https://gyazo.com/c758e2b16f6c1e921c893dd3f0329b36.gif](https://gyazo.com/c758e2b16f6c1e921c893dd3f0329b36.gif)
+
+6.  Your project should now be live and accessible at the URL provided by Vercel.
+
+## Useful links
+
+- [Using Express.js with Vercel – Vercel Docs](https://vercel.com/guides/using-express-with-vercel)
+- [Express 5.x - API Reference](https://expressjs.com/en/5x/api.html)
+- [Vercel documentation](https://vercel.com/docs)
+- [Deploying with Vercel](https://vercel.com/docs/v2/git-integrations/vercel-for-github#deploying-with-vercel)
+
+## Author
+
+👤 **Dung Huynh**
+
+- Website: https://productsway.com/
+- Twitter: [@jellydn](https://twitter.com/jellydn)
+- Github: [@jellydn](https://github.com/jellydn)
+
+## Show your support
+
+[![kofi](https://img.shields.io/badge/Ko--fi-F16061?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ko-fi.com/dunghd)
+[![paypal](https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white)](https://paypal.me/dunghd)
+[![buymeacoffee](https://img.shields.io/badge/Buy_Me_A_Coffee-FFDD00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=black)](https://www.buymeacoffee.com/dunghd)
+
+Give a ⭐️ if this project helped you!

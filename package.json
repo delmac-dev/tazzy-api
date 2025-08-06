@@ -1,26 +1,26 @@
 {
-  "name": "tazzy-api",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start"
-  },
-  "dependencies": {
-    "@adobe/pdfservices-node-sdk": "^4.1.0",
-    "@google/genai": "^1.12.0",
-    "@supabase/ssr": "^0.6.1",
-    "@supabase/supabase-js": "^2.53.0",
-    "axios": "^1.11.0",
-    "next": "15.4.5",
-    "pdf-to-png-converter": "^3.7.1",
-    "pdf2json": "^3.2.0",
-    "tesseract.js": "^6.0.1"
-  },
-  "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "typescript": "^5"
-  }
+	"name": "express-vercel-starter",
+	"version": "1.0.0",
+	"license": "MIT",
+	"main": "index.js",
+	"scripts": {
+		"build": "tsup app --clean --format cjs,esm --env.NODE_ENV production",
+		"dev": "tsx watch app/index.ts",
+		"start": "tsx app/index.ts",
+		"typecheck": "tsc --noEmit",
+		"vercel-build": "tsup app --clean --format cjs --env.NODE_ENV production --env.DEPLOYMENT_ENV vercel --out-dir api"
+	},
+	"dependencies": {
+		"cors": "2.8.5",
+		"express": "5.1.0",
+		"helmet": "8.1.0"
+	},
+	"devDependencies": {
+		"@types/cors": "2.8.19",
+		"@types/express": "5.0.3",
+		"@types/supertest": "6.0.3",
+		"tsup": "8.5.0",
+		"tsx": "4.20.3",
+		"typescript": "5.9.2"
+	}
 }
