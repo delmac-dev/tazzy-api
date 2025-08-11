@@ -76,7 +76,7 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "account_schedule_schedule_id_fkey"
+            foreignKeyName: "fk_account_schedule_schedule"
             columns: ["schedule_id"]
             isOneToOne: false
             referencedRelation: "schedules"
@@ -117,17 +117,15 @@ export type Database = {
           created_at: string
           date: string | null
           end_time: string
+          extra_data: Json | null
           id: string
           location: Json | null
-          metadata: Json | null
           name: string
           owner_id: string
-          parent_activity: string | null
           recurrence: Json | null
           schedule_id: string
           start_time: string
           status: string
-          type: string
           updated_at: string
         }
         Insert: {
@@ -135,17 +133,15 @@ export type Database = {
           created_at?: string
           date?: string | null
           end_time: string
+          extra_data?: Json | null
           id?: string
           location?: Json | null
-          metadata?: Json | null
           name: string
           owner_id: string
-          parent_activity?: string | null
           recurrence?: Json | null
           schedule_id: string
           start_time: string
           status?: string
-          type?: string
           updated_at?: string
         }
         Update: {
@@ -153,17 +149,15 @@ export type Database = {
           created_at?: string
           date?: string | null
           end_time?: string
+          extra_data?: Json | null
           id?: string
           location?: Json | null
-          metadata?: Json | null
           name?: string
           owner_id?: string
-          parent_activity?: string | null
           recurrence?: Json | null
           schedule_id?: string
           start_time?: string
           status?: string
-          type?: string
           updated_at?: string
         }
         Relationships: [
@@ -175,14 +169,77 @@ export type Database = {
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "activities_parent_activity_fkey"
-            columns: ["parent_activity"]
+            foreignKeyName: "activities_schedule_id_fkey"
+            columns: ["schedule_id"]
+            isOneToOne: false
+            referencedRelation: "schedules"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      activity_instances: {
+        Row: {
+          activity_id: string | null
+          created_at: string
+          custom_data: Json | null
+          date: string | null
+          end_time: string
+          id: string
+          location: Json | null
+          owner_id: string
+          schedule_id: string
+          start_time: string
+          status: string
+          type: string
+          updated_at: string
+        }
+        Insert: {
+          activity_id?: string | null
+          created_at?: string
+          custom_data?: Json | null
+          date?: string | null
+          end_time: string
+          id?: string
+          location?: Json | null
+          owner_id: string
+          schedule_id: string
+          start_time: string
+          status?: string
+          type?: string
+          updated_at?: string
+        }
+        Update: {
+          activity_id?: string | null
+          created_at?: string
+          custom_data?: Json | null
+          date?: string | null
+          end_time?: string
+          id?: string
+          location?: Json | null
+          owner_id?: string
+          schedule_id?: string
+          start_time?: string
+          status?: string
+          type?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "activity_instances_activity_id_fkey"
+            columns: ["activity_id"]
             isOneToOne: false
             referencedRelation: "activities"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "activities_schedule_id_fkey"
+            foreignKeyName: "activity_instances_owner_id_fkey"
+            columns: ["owner_id"]
+            isOneToOne: false
+            referencedRelation: "accounts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "activity_instances_schedule_id_fkey"
             columns: ["schedule_id"]
             isOneToOne: false
             referencedRelation: "schedules"
@@ -291,7 +348,6 @@ export type Database = {
           color: string
           created_at: string
           emoji: string
-          file: Json | null
           id: string
           name: string
           owner_id: string
@@ -304,7 +360,6 @@ export type Database = {
           color: string
           created_at?: string
           emoji: string
-          file?: Json | null
           id?: string
           name: string
           owner_id: string
@@ -317,7 +372,6 @@ export type Database = {
           color?: string
           created_at?: string
           emoji?: string
-          file?: Json | null
           id?: string
           name?: string
           owner_id?: string

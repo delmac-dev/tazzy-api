@@ -24,22 +24,10 @@ export default async function authHandler(req: Request, res: Response, next: Nex
   const authHeader = req.headers.authorization;
   const token = authHeader?.split(' ')[1];
   if (!token) return res.status(401).json(authFailResponse);
-
   
   const { data, error } = await client(token).auth.getClaims(token);
-  console.log({data});
   
   if(error) return res.status(401).json(authFailResponse);
 
   next();
 };
-
-// export default function authHandler(req: Request, res: Response, next: NextFunction) {
-//   auth(req, res, (err:any) => {
-//     // TODO: uncomment this to enable auth
-//     // if (err) {
-//     //   return res.status(401).json({ error: 'Unauthorized', message: err.message });
-//     // }
-//     next();
-//   });
-// }
