@@ -1,8 +1,8 @@
-import { createClient as newClient } from "@supabase/supabase-js";
+import { createClient } from "@supabase/supabase-js";
 import { Database } from "../../types/database";
 
 export function client(jwt: string) {
-  return newClient<Database>(
+  return createClient<Database>(
     process.env.SUPABASE_URL!,
     process.env.SUPABASE_PUBLISHABLE_KEY!,
     {
@@ -12,5 +12,12 @@ export function client(jwt: string) {
         },
       },
     }
+  );
+};
+
+export function supaClient() {
+  return createClient<Database>(
+    process.env.SUPABASE_URL!,
+    process.env.SUPABASE_API_KEY!
   );
 };

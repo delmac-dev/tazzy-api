@@ -1,7 +1,7 @@
 import { Type } from "@google/genai";
 
 
-export const extractScheduleFromPDFDeclaration = {
+export const extractDataSchema = {
   name: "extract_schedule_from_pdf",
   description:
     "Extracts structured schedule entries from a timetable PDF, combining consecutive blocks for the same class into one entry with an extended end time.",
@@ -49,7 +49,7 @@ export const extractScheduleFromPDFDeclaration = {
   },
 };
 
-export const reportProcessingStatusDeclaration = {
+export const reportStatusSchema = {
   name: "report_processing_status",
   description: "Reports whether processing was successful or failed with a short reason.",
   parameters: {
