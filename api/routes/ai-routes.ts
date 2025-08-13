@@ -9,6 +9,9 @@ const router = Router();
 
 router.post("/generate", async (req, res) => {
   const { prompt, url, scheduleID, userID } = req.body;
+
+  console.log("START", prompt, url, scheduleID, userID);
+  
   try {
     const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
