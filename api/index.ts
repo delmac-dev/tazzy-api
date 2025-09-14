@@ -12,11 +12,12 @@ const app = express();
 
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(errorHandler);
 app.use(authHandler);
 
 app.use("/api/", aiRoutes);
 app.use("/api/", testRoutes);
+
+app.use(errorHandler);
 
 app.listen(PORT, () => {
     console.log(`✅ Server running on http://localhost:${PORT}`);

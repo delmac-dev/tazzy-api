@@ -1,6 +1,6 @@
 import type { NextFunction, Request, Response } from "express";
 
-function errorHandler(
+export default function errorHandler(
 	err: Error,
 	_req: Request,
 	res: Response,
@@ -9,5 +9,3 @@ function errorHandler(
 	res.setHeader("Content-Type", "application/json");
 	res.status(500).json({error:err.name, message: err.message});
 }
-
-export default errorHandler;

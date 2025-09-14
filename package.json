@@ -11,16 +11,20 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@ai-sdk/google": "^2.0.14",
 		"@google/genai": "^1.12.0",
 		"@supabase/supabase-js": "^2.53.0",
+		"ai": "^5.0.44",
 		"axios": "^1.11.0",
 		"dotenv": "^16.4.1",
 		"express": "^4.18.2",
 		"express-jwt": "^8.5.1",
 		"jwks-rsa": "^3.2.0",
-		"rrule": "^2.8.1"
+		"rrule": "^2.8.1",
+		"zod": "^4.1.8"
 	},
 	"devDependencies": {
-		"@types/express": "^5.0.3"
+		"@types/express": "^5.0.3",
+		"typescript": "^5.9.2"
 	}
 }
