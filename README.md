@@ -1,33 +1,99 @@
-# Express.js on Vercel
+# Express AI API
 
-Simple Express.js + Vercel example that uses Vercel Postgres to add and display users in a table.
+An Express.js API with AI capabilities using Google's Gemini model, designed for deployment on Vercel.
 
-## How to Use
+## Features
 
-BE sure to create a Vercel Postgres database and add you environment variables to your `.env` file. You can find an example of the `.env` file in the `.env.example` file.
+- 🤖 AI-powered chat endpoint using Gemini
+- 💝 Special "What is love?" endpoint
+- 🚀 Ready for Vercel deployment
+- 📝 TypeScript support
+- ✅ Input validation with Zod
+- 🌐 CORS enabled
 
-You can choose from one of the following two methods to use this repository:
+## Setup
 
-### One-Click Deploy
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+2. Create `.env` file with your Gemini API key:
+   ```
+   PORT=3000
+   GOOGLE_GENERATIVE_AI_API_KEY=your_gemini_api_key_here
+   ```
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/examples/tree/main/solutions/express&project-name=express&repository-name=express)
+3. Run locally:
+   ```bash
+   npm run dev
+   ```
 
-### Clone and Deploy
+## API Endpoints
 
-```bash
-git clone https://github.com/vercel/examples/tree/main/solutions/express
+### GET /
+Returns API information and available endpoints.
+
+### POST /api/chat
+Send a message to the AI model.
+
+**Request body:**
+```json
+{
+  "message": "Your question here"
+}
 ```
 
-Install the Vercel CLI:
-
-```bash
-npm i -g vercel
+**Response:**
+```json
+{
+  "success": true,
+  "response": "AI response here",
+  "timestamp": "2025-09-14T12:00:00.000Z"
+}
 ```
 
-Then run the app at the root of the repository:
+### GET /api/love
+Get an AI response to "What is love?"
 
-```bash
-vercel dev
+**Response:**
+```json
+{
+  "success": true,
+  "question": "What is love?",
+  "response": "AI philosophical response about love",
+  "timestamp": "2025-09-14T12:00:00.000Z"
+}
 ```
+
+### GET /health
+Health check endpoint.
+
+## Deployment
+
+### Vercel
+
+1. Install Vercel CLI:
+   ```bash
+   npm i -g vercel
+   ```
+
+2. Deploy:
+   ```bash
+   vercel
+   ```
+
+3. Add environment variable in Vercel dashboard:
+   - `GOOGLE_GENERATIVE_AI_API_KEY`: Your Gemini API key
+
+## Environment Variables
+
+- `PORT`: Server port (default: 3000)
+- `GOOGLE_GENERATIVE_AI_API_KEY`: Your Google Gemini API key
+
+## Scripts
+
+- `npm run dev`: Start development server with auto-reload
+- `npm run build`: Build TypeScript to JavaScript
+- `npm start`: Start production server
+- `npm run vercel-build`: Build for Vercel deployment

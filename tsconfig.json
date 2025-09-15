@@ -1,12 +1,22 @@
 {
   "compilerOptions": {
-    "target": "ES2022",             // or ES2020, ES2018
-    "module": "commonjs",           // or "ESNext" if using ES Modules
+    "target": "ES2020",
+    "module": "commonjs",
+    "lib": ["ES2020"],
+    "outDir": "./.vercel/output",
+    "rootDir": "./",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "outDir": "dist"
+    "resolveJsonModule": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true
   },
-  "include": ["api/**/*", "middlewares/**/*", "types/**/*", "lib/**/*"]
+  "include": ["app.ts", "routes/**/*.ts"],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }
