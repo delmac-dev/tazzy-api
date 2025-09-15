@@ -7,6 +7,7 @@ export default tool({
     reason: z.string().describe("Why the request could not be fulfilled"),
   }),
   async execute({ reason }) {
+    console.log(`Invalid request: ${reason}`);
     return {
       success: false,
       message: reason,

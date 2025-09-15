@@ -14,7 +14,7 @@
     "declarationMap": true,
     "sourceMap": true
   },
-  "include": ["app.ts", "routes/**/*.ts"],
+  "include": ["app.ts", "routes/**/*.ts", "lib/**/*.ts", "tools/**/*.ts"],
   "exclude": [
     "node_modules",
     "dist"
