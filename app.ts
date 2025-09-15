@@ -2,9 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import errorHandler from './middlewares/error-handler';
+import authHandler from './middlewares/auth-handler';
 import bodyParser from "body-parser";
 import aiRoute from './routes/ai';
-import toolRoute from './routes/tool';
 import healthRoute from './routes/health';
 import forbiddenRoute from './routes/404';
 
@@ -19,8 +19,9 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(authHandler);
+
 app.use("/api/ai", aiRoute);
-app.use("/api/tool", toolRoute);
 app.use("/api/health", healthRoute);
 app.use('/{*splat}', forbiddenRoute);
 
