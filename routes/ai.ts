@@ -10,6 +10,7 @@ const router = Router();
 
 const Body = z.object({
   scheduleId: z.string().min(1),
+  userId: z.string().min(1),
   prompt: z.string().optional(),
   fileUrl: z.url().optional(),
 });
@@ -18,7 +19,7 @@ router.post("/", async (req, res, next) => {
   try {
     const parsed = Body.safeParse(req.body);
     if (!parsed.success) return res.status(400).json(parsed.error);
-    const { scheduleId, prompt, fileUrl } = parsed.data;
+    const { scheduleId, userId, prompt, fileUrl } = parsed.data;
 
     if (!prompt && !fileUrl) {
       throw new Error("either fileUrl or prompt are required");
@@ -43,6 +44,7 @@ router.post("/", async (req, res, next) => {
         { role: 'system', content: SUPER_PROMPT },
         { role: 'user', content: [
           { type: 'text', text: `Schedule ID: ${scheduleId}` },
+          { type: 'text', text: `User ID: ${userId}` },
           ...userContent,
         ]},
       ],
